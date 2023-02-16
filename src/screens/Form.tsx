@@ -33,6 +33,7 @@ export const Form = () => {
             <Text style={styles.name}>"{form.name}"</Text>
 
             <View style={{height: 100}} />
+
           </View>
       </ScrollView>
   );

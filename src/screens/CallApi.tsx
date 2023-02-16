@@ -1,15 +1,28 @@
 import React, { useState } from 'react'
-import { Button, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, Button, ScrollView, StyleSheet, Text, View } from 'react-native'
 
 export const CallApi = () => {
   
     const [data, setData] = useState();
+    const [loading, setLoading] = useState(false);
  
     const callApi = async () => {
         const resp = await fetch("https://jsonplaceholder.typicode.com/users");
         const data = await resp.json();
         setData(data)
+
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 5000);
     }
+
+    // const loadingTest = () => {
+    //     console.log("hola nuevo prueba")
+    //     return (
+    //         <Text>Hola mami</Text>
+    //     )
+    // }
 
     return (
         <View style={styles.container}>
@@ -28,9 +41,8 @@ export const CallApi = () => {
             >
                 <Text>PUSH</Text>
             </TouchableHighlight> */}
-
             <ScrollView>
-                <Text>{ JSON.stringify(data, null, 3) }</Text>
+                { loading ? <ActivityIndicator size="large" color={"black"} /> : <Text>{ JSON.stringify(data, null, 3) }</Text> }
             </ScrollView>
         </View>
     )
