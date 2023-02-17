@@ -5,6 +5,7 @@ import { PhoneInfo } from './src/screens/PhoneInfo';
 import { CallApi } from './src/screens/CallApi';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Form } from './src/screens/Form';
+import { MapsScreen } from './src/screens/MapsScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -16,6 +17,15 @@ const App = () => {
             <Tab.Navigator
                 barStyle={{ backgroundColor: 'skyblue' }}
             >
+                <Tab.Screen 
+                    name="Maps" 
+                    component={MapsScreen} 
+                    options={ ({route}) => ({
+                        tabBarIcon: ({ color }) => {
+                            return <Icon name="navigate-sharp" size={ 20 } color={ color } />
+                        }
+                    }) }
+                />
                 <Tab.Screen 
                     name="CallApi" 
                     component={CallApi} 
