@@ -6,17 +6,21 @@ import {
   ScrollView,
   Text,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import {useForm} from '../hooks/useForm';
 
 export const Form = () => {
+
+  const { top } = useSafeAreaInsets();
+
   const {form, onChange } = useForm({
     name: '',
   });
 
   return (
       <ScrollView>
-          <View style={styles.container}>
+          <View style={{...styles.container,marginTop:top}}>
             <View>
                 <Text style={styles.title}>Formulario</Text>
             </View>

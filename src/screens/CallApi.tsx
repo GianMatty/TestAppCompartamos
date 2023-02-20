@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { ActivityIndicator, Button, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export const CallApi = () => {
   
+    const { top } = useSafeAreaInsets();
+
     const [data, setData] = useState();
     const [loading, setLoading] = useState(false);
  
@@ -25,7 +28,7 @@ export const CallApi = () => {
     // }
 
     return (
-        <View style={styles.container}>
+        <View style={{...styles.container,marginTop:top}}>
             <View>
                 <Text style={styles.title}>Consumo de Api</Text>
             </View>

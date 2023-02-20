@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 // import carImage from '../../assets/image/logo-com.png'
 // import carImge = require('../')
 
 export const MapsScreen = () => {
+
+    const { top } = useSafeAreaInsets();
 
     const [ubicacion, setUbicacion] = useState({
         latitude: -12.040864422966239,
@@ -12,7 +15,7 @@ export const MapsScreen = () => {
     })
 
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container,marginTop:top}}>
         <View>
             <Text style={styles.title}>Google Maps Integrado</Text>
         </View>

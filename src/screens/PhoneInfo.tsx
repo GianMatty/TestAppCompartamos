@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import { Button, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native'
 import { getUniqueId, getInstanceId, getBrand, getDeviceId, getSystemVersion, getSystemName } from 'react-native-device-info';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 
 export const PhoneInfo = () => {
+
+    const { top } = useSafeAreaInsets();
   
     const [info, setInfo] = useState<Object>();
     const [UID, setUID] = useState("");
     
     const {width, height} = useWindowDimensions()
-    console.log("Width, Height: ", width, height)
     
     getInstanceId().then((instanceId) => {
         setUID(instanceId)
@@ -28,7 +30,7 @@ export const PhoneInfo = () => {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={{...styles.container,marginTop:top}}>
             <View>
                 <Text style={styles.title}>Informacion de telefono</Text>
             </View>
