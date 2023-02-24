@@ -35,14 +35,12 @@
 			</dict>
 		</dict>
 	</dict>
-
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Necesito saber tu ubicacion para mostrar mapa</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Necesito saber tu ubicacion para mostrar mapa</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-  <string>Necesito saber tu ubicacion para mostrar mapa</string>
-
+	<string>Necesito saber tu ubicacion para mostrar mapa</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -57,11 +55,13 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-  
-  <key>UIAppFonts</key>
-  <array>
-    <string>Ionicons.ttf</string>
-  </array>
-  
+	<key>UIAppFonts</key>
+	<array>
+		<string>Ionicons.ttf</string>
+		<string>ShantellSans-Bold.ttf</string>
+		<string>ShantellSans-ExtraBold.ttf</string>
+		<string>ShantellSans-Italic.ttf</string>
+		<string>ShantellSans-Medium.ttf</string>
+	</array>
 </dict>
 </plist>

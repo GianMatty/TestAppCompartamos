@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/ShantellSans-Bold.ttf",
+      "sha1": "2aa50c1687d153dfb6c672708f07535afa106143"
+    },
+    {
+      "path": "assets/fonts/ShantellSans-ExtraBold.ttf",
+      "sha1": "fe376c41c66591e1f9a1fdc2c9e49b6a95842906"
+    },
+    {
+      "path": "assets/fonts/ShantellSans-Italic.ttf",
+      "sha1": "8209921584c844208d1432e678277f79f03cae01"
+    },
+    {
+      "path": "assets/fonts/ShantellSans-Medium.ttf",
+      "sha1": "3deb3df26da982cf593cd1935f94c55d2e214a70"
+    }
+  ]
+}

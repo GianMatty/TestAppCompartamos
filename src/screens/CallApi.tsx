@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { ActivityIndicator, Button, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, Button, ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { fonts } from '../theme/appTheme';
 
 export const CallApi = () => {
   
@@ -33,19 +34,19 @@ export const CallApi = () => {
                 <Text style={styles.title}>Consumo de Api</Text>
             </View>
 
-            <Button 
+            {/* <Button 
                 title='Call Api'
                 onPress={() => callApi()}
-            />
-            <Text></Text>
-            {/* <TouchableHighlight 
+            /> */}
+            <TouchableOpacity
                 style={ styles.boton }
                 onPress={() => callApi()}
             >
-                <Text>PUSH</Text>
-            </TouchableHighlight> */}
+                <Text style={styles.textBoton}>Call API</Text>
+            </TouchableOpacity>
+            <Text></Text>
             <ScrollView>
-                { loading ? <ActivityIndicator size="large" color={"black"} /> : <Text>{ JSON.stringify(data, null, 3) }</Text> }
+                { loading ? <ActivityIndicator size="large" color={"black"} /> : <Text style={{fontFamily: fonts.font_bold}}>{ JSON.stringify(data, null, 3) }</Text> }
             </ScrollView>
         </View>
     )
@@ -56,17 +57,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
+    fontFamily: fonts.font_bold,
   },
   boton: {    
-    backgroundColor: 'skyblue',
-    width: 120,
-    marginHorizontal: 0
+    backgroundColor: '#009BF2',
+    width: '100%',
+    marginHorizontal: 0,
+    justifyContent: 'center',
+    borderRadius: 16
+  },
+  textBoton: {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 16,
+    paddingVertical: 8,
+    fontFamily: fonts.font_bold,
   },
   title: {
     textAlign: 'center',
     fontWeight: "600",
     fontSize: 24,
     marginBottom: 20,
-    marginTop: 20
+    marginTop: 20,
+    fontFamily: fonts.font_bold,
   }
 });

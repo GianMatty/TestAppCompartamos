@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { fonts } from '../theme/appTheme'
 // import carImage from '../../assets/image/logo-com.png'
 // import carImge = require('../')
 
@@ -30,8 +31,9 @@ export const MapsScreen = () => {
             }}
         >
             <Marker 
-                style={{width: 10, height: 10}}
-                
+                style={{width: 10, height: 10 }}
+                title='Real Plaza Puruchuco'
+                description='Centro comercial mas grande de Ate'
                 coordinate={ubicacion}
                 image={require("../../assets/image/logo-com4.png")}
             />
@@ -55,6 +57,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: 24,
     marginBottom: 20,
-    marginTop: 20
+    marginTop: 20,
+    fontFamily: fonts.font_bold,
   }
 });

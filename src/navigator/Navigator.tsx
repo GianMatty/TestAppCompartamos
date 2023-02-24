@@ -32,7 +32,8 @@ export const Navigator = () => {
                     options={ ({route}) => ({
                         tabBarIcon: ({ color }) => {
                             return <Icon name="navigate-sharp" size={ 20 } color={ color } />
-                        }
+                        },
+
                     }) }
                     />
                 : <Tab.Screen 
@@ -43,7 +44,7 @@ export const Navigator = () => {
                         title: 'Maps',
                         tabBarIcon: ({ color }) => {
                             return <Icon name="navigate-sharp" size={ 20 } color={ color } />
-                        }
+                        },
                     }) }
                     />
         }

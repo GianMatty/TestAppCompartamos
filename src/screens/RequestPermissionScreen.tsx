@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import { TouchableOpacity } from 'react-native';
 import {StyleSheet, Text, View} from 'react-native';
 import {PermissionsContext} from '../context/PermissionsContext';
+import { fonts } from '../theme/appTheme';
 
 export const RequestPermissionsScreen = () => {
   const {permissions, askLocationPermission } = useContext(PermissionsContext);
@@ -20,7 +21,7 @@ export const RequestPermissionsScreen = () => {
             <Text style={ styles.buttonText }>Solicitar Permiso</Text>
         </TouchableOpacity>
 
-      <Text style={{marginTop: 20}}>
+      <Text style={{marginTop: 20, fontFamily: fonts.font_bold}}>
         {`Estado del Permiso del GPS: ${permissions.locationStatus.toUpperCase()}`}
       </Text>
     </View>
@@ -32,12 +33,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    
   },
   title: {
     width: 250,
     fontSize: 18,
     textAlign: 'center',
     marginBottom: 20,
+    fontFamily: fonts.font_bold
   },
   button: {
     height: 45,
@@ -56,6 +59,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
         color: 'white',
-        fontSize: 18
+        fontSize: 18,
+        fontFamily: fonts.font_bold,
   }
 });

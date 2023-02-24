@@ -9,6 +9,7 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import {useForm} from '../hooks/useForm';
+import { fonts } from '../theme/appTheme';
 
 export const Form = () => {
 
@@ -33,7 +34,7 @@ export const Form = () => {
               onChangeText={value => onChange(value, 'name')}
             />
 
-            <Text>Me Llamo:</Text>
+            <Text style={{fontFamily: fonts.font_bold}}>Me Llamo:</Text>
             <Text style={styles.name}>"{form.name}"</Text>
 
             <View style={{height: 100}} />
@@ -55,18 +56,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 10,
     marginTop: 10,
-    marginBottom: 20
+    marginBottom: 20,
+    fontFamily: fonts.font_bold,
   },
   title: {
     textAlign: 'center',
     fontWeight: "600",
     fontSize: 24,
     marginBottom: 20,
-    marginTop: 20
+    marginTop: 20,
+    fontFamily: fonts.font_bold,
   },
   name: {
     marginTop: 16,
     fontSize: 40,
-    color: 'brown'
+    color: 'brown',
+    fontFamily: fonts.font_bold,
   }
 });
